@@ -1,39 +1,46 @@
 import unittest
 
-from main.面试题3 import m1
-from main.面试题3 import b1
-from main.面试题3 import m2
+from main.面试题3 import my1
+from main.面试题3 import my2
+from main.面试题3 import book1
+from main.面试题3 import book2
 
-class   MSTest(unittest.TestCase):
+class MSTest(unittest.TestCase):
     def setUp(self):
-        self.n = [
-            [1, 2, 8, 9],
-            [2, 4, 9, 12],
-            [4, 7, 10, 13],
-            [6, 8, 11, 15]
-        ]
+        pass
 
-    def test_run_m(self):
-        num = 13
-        self.assertTrue(m1.f(self.n, num))
-        num = 7
-        self.assertTrue(m1.f(self.n, num))
-        num = 17
-        self.assertFalse(m1.f(self.n, num))
+    def test_my_find_same1(self):
+        nums = [2,3,1,0,2,5,3]
+        self.assertEqual(my1.find_same1(nums), [2, 3])
 
-    def test_run_b1(self):
-        num = 7
-        self.assertTrue(b1.f(self.n, num))
+    def test_my_find_same2(self):
+        nums = [2, 3, 1, 0, 2, 5, 3]
+        self.assertEqual(my1.find_same2(nums),[2,3])
 
-    def test_run_b2(self):
-        num = 7
-        self.assertTrue(m2.f(self.n,num))
+    def test_my_find_same3(self):
+        """
+            题目2
+        """
+        nums = [2,3,5,4,3,5,6,7]
+        self.assertEqual([3,5],my2.find_same1(nums))
 
-        num = 13
-        self.assertTrue(m2.f(self.n,num))
+    def test_my_find_same4(self):
+        """
+            题目2
+        """
+        nums = [2, 3, 5, 4, 3, 5, 6, 7]
+        self.assertEqual([3,5],my2.find_same2(nums))
 
-        num = 17
-        self.assertFalse(m2.f(self.n,num))
+    def test_book_find_same1(self):
+        nums = [2, 3, 1, 0, 2, 5, 3]
+        self.assertEqual([2,3],book1.find_same(nums))
+
+    def test_book_find_same2(self):
+        """
+            题目2
+        """
+        nums = [2, 3, 1, 0, 2, 5, 3]
+        self.assertTrue(book2.find_same(nums) in [2,3])
 
     def tearDown(self):
         pass
