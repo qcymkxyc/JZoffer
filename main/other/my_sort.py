@@ -264,9 +264,10 @@ def radix_sort2(nums):
     max_len = len(str(max_len_num))
 
     for digit in range(max_len):
+        #初始化列表
         table = list()
         for i in range(10):
-            table.append(LinkList())     #初始化列表
+            table.append(LinkList())
 
         for num in nums:
             try:
@@ -283,6 +284,50 @@ def radix_sort2(nums):
             nums.extend(link_list.traverse())
 
     return nums
+
+
+def shell_sort(nums):
+    """希尔排序
+
+    :param nums: list
+        待排序数组
+    """
+    def insert_sort(nums,start_index,interval):
+        """直接插入排序
+
+        :param nums: list
+            待排序数组
+        :param start_index: int
+            开始排序index
+        :param interval: int
+            希尔跳跃间隔
+        """
+        for i in range(start_index + interval, len(nums), interval):
+            x = nums[i]
+
+            j = i
+            while j > start_index :
+                temp = nums[j - interval]
+                if x > temp:
+                    break
+                nums[j] = temp
+                j = j - interval
+            nums[j] = x
+
+
+    n_num = len(nums)
+    interval = n_num // 2
+
+    #外层循环循环间隔
+    while interval >= 1:
+        #内层循环循环子序列
+        for start in range(n_num):
+            if start / n_num >= 1:
+                break;
+            insert_sort(nums,start,interval)    #对子序列直接插入排序
+        interval -= 1
+
+
 
 
 

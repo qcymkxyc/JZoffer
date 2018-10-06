@@ -77,9 +77,15 @@ class SortTest(unittest.TestCase):
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_radix_sort2(self):
-        """测试基数排序2"""
+        """测试基数排序2（链表实现）"""
         self.test_nums = my_sort.radix_sort2(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
+
+    def test_my_shell_sort(self):
+        """测试希尔排序"""
+        my_sort.shell_sort(self.test_nums)
+        self.assertEqual(self.test_nums,self.nums)
+
 
 if __name__ == "__main__":
     unittest.main()
