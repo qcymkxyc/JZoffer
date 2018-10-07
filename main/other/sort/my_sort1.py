@@ -5,7 +5,7 @@
 @Time    : 18-9-30 上午10:31
 @Author  : qcymkxyc
 @Email   : qcymkxyc@163.com
-@File    : my_sort.py
+@File    : my_sort1.py
 @Software: PyCharm
 
 排序练习

@@ -15,8 +15,8 @@ import unittest
 import random
 import copy
 
-from main.other import book_sort
-from main.other import my_sort
+from main.other.sort import book_sort, my_sort1,my_sort2
+
 
 class SortTest(unittest.TestCase):
     def setUp(self):
@@ -48,43 +48,62 @@ class SortTest(unittest.TestCase):
 
     def test_my_bubble_sort(self):
         """测试冒泡排序"""
-        my_sort.bubble_sort(self.test_nums)
+        my_sort1.bubble_sort(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_insert_sort(self):
         """测试插入排序"""
-        my_sort.insert_sort(self.test_nums)
+        my_sort1.insert_sort(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_binary_search_sort(self):
         """测试二分插入排序"""
-        my_sort.binary_insert_sort(self.test_nums)
+        my_sort1.binary_insert_sort(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_merge_sort(self):
         """测试归并排序"""
-        self.test_nums = my_sort.merge_sort(self.test_nums)
+        self.test_nums = my_sort1.merge_sort(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_select_sort(self):
         """测试选择排序"""
-        my_sort.select_sort(self.test_nums)
+        my_sort1.select_sort(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_radix_sort1(self):
         """测试基数排序1"""
-        self.test_nums = my_sort.radix_sort1(self.test_nums)
+        self.test_nums = my_sort1.radix_sort1(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_radix_sort2(self):
         """测试基数排序2（链表实现）"""
-        self.test_nums = my_sort.radix_sort2(self.test_nums)
+        self.test_nums = my_sort1.radix_sort2(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
 
     def test_my_shell_sort(self):
         """测试希尔排序"""
-        my_sort.shell_sort(self.test_nums)
+        my_sort1.shell_sort(self.test_nums)
         self.assertEqual(self.test_nums,self.nums)
+
+##########################################################################
+#   第二次训练
+##########################################################################
+
+    def test_my2_insert_sort(self):
+        """测试直接插入排序"""
+        my_sort2.insert_sort(self.test_nums)
+        self.assertEqual(self.nums,self.test_nums)
+
+        #本来就有序的情况
+        nums = [1,2,3]
+        my_sort2.insert_sort(nums)
+        self.assertEqual([1,2,3],nums)
+
+        #需要插入到第一个元素之前的情况
+        nums = [3,2,1]
+        my_sort2.insert_sort(nums)
+        self.assertEqual([1,2,3],nums)
 
 
 if __name__ == "__main__":
