@@ -2,8 +2,8 @@ import unittest
 import random
 import copy
 
-from main.面试题11 import my1
-from main.面试题11 import book1
+from main.question11 import my1
+from main.question11 import book1
 
 class MSTest(unittest.TestCase):
     def setUp(self):

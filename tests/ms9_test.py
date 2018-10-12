@@ -10,8 +10,8 @@
     
 """
 import unittest
-from main.面试题9 import my1
-from main.面试题9 import my2
+from main.question9 import my1
+from main.question9 import my2
 
 class MSTest(unittest.TestCase):
 

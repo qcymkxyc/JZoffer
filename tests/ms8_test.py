@@ -1,6 +1,6 @@
 import unittest
 
-from main.面试题8 import my1
+from main.question8 import my1
 
 
 class MSTest(unittest.TestCase):

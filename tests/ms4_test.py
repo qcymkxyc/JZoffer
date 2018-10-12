@@ -1,8 +1,8 @@
 import unittest
 
-from main.面试题4 import m1
-from main.面试题4 import b1
-from main.面试题4 import m2
+from main.question4 import m1
+from main.question4 import b1
+from main.question4 import m2
 
 class MSTest(unittest.TestCase):
     def setUp(self):
