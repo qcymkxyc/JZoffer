@@ -89,21 +89,25 @@ class SortTest(unittest.TestCase):
 ##########################################################################
 #   第二次训练
 ##########################################################################
-
     def test_my2_insert_sort(self):
         """测试直接插入排序"""
         my_sort2.insert_sort(self.test_nums)
-        self.assertEqual(self.nums,self.test_nums)
+        self.assertEqual(self.nums, self.test_nums)
 
-        #本来就有序的情况
-        nums = [1,2,3]
+        # 本来就有序的情况
+        nums = [1, 2, 3]
         my_sort2.insert_sort(nums)
-        self.assertEqual([1,2,3],nums)
+        self.assertEqual([1, 2, 3], nums)
 
-        #需要插入到第一个元素之前的情况
-        nums = [3,2,1]
+        # 需要插入到第一个元素之前的情况
+        nums = [3, 2, 1]
         my_sort2.insert_sort(nums)
-        self.assertEqual([1,2,3],nums)
+        self.assertEqual([1, 2, 3], nums)
+
+    def test_my2_binary_sort(self):
+        """测试二分插入排序"""
+        my_sort2.binary_insert_sort(self.test_nums)
+        self.assertEqual(self.test_nums, self.nums)
 
 
 if __name__ == "__main__":

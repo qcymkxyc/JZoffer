@@ -50,8 +50,24 @@ def binary_insert_sort(nums):
         """
         # 得到要查找的数
         x = nums[search_len]
+
         left, right = 0, search_len - 1
         while left <= right:
             mid = (left + right) // 2
             if nums[mid] < x:
-                mid += 1
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        return left
+
+    for i in range(1, len(nums)):
+        x = nums[i]
+
+        index = _binary_search(i)
+        j = i
+        while j > index:
+            nums[j] = nums[j - 1]
+            j -= 1
+
+        nums[index] = x

@@ -35,10 +35,13 @@ class MSTest(unittest.TestCase):
         """搜索格子"""
         # 功能测试
         self.assertEqual(my1.matrix_search((2, 2), (0, 0), k=1), 3)
+
         # k为负数的情况
         self.assertEqual(my1.matrix_search(self.matrix, (0, 0), k=-1), 0)
+
         # k为0
         self.assertEqual(my1.matrix_search(self.matrix, (0, 0), k=0), 1)
+
         # 一行或一列的情况
         self.assertEqual(my1.matrix_search((1, 3), (0, 0), k=1), 2)
         self.assertEqual(my1.matrix_search((3, 1), (0, 0), k=1), 2)
