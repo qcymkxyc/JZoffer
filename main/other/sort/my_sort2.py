@@ -49,12 +49,12 @@ def binary_insert_sort(nums):
             数组中的位置
         """
         # 得到要查找的数
-        x = nums[search_len]
+        current_num = nums[search_len]
 
         left, right = 0, search_len - 1
         while left <= right:
             mid = (left + right) // 2
-            if nums[mid] < x:
+            if nums[mid] < current_num:
                 left = mid + 1
             else:
                 right = mid - 1
@@ -71,3 +71,39 @@ def binary_insert_sort(nums):
             j -= 1
 
         nums[index] = x
+
+
+def shell_sort(nums):
+    """希尔排序
+
+    :param nums: list
+        待排数组
+    """
+    def _insert_sort(_nums, start_index, interval):
+        """直接插入排序
+
+        :param _nums: list
+            待排数组
+        :param start_index: int
+            起始index
+        :param interval:
+            希尔排序的间隔
+        """
+        for i in range(start_index + interval, len(_nums), interval):
+            x = _nums[i]
+
+            j = i - interval
+            while j >= start_index:
+                if x >= _nums[j]:
+                    break
+                _nums[j + interval] = _nums[j]
+                j = j - interval
+            _nums[j + interval] = x
+
+    for interval in range(len(nums) // 2, 0, -1):
+        for start_index in range(interval):
+            _insert_sort(_nums=nums, start_index=start_index, interval=interval)
+
+################################################################################
+#    选择排序
+################################################################################

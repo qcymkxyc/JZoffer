@@ -109,6 +109,11 @@ class SortTest(unittest.TestCase):
         my_sort2.binary_insert_sort(self.test_nums)
         self.assertEqual(self.test_nums, self.nums)
 
+    def test_my2_shell_sort(self):
+        """测试希尔排序"""
+        my_sort2.shell_sort(self.test_nums)
+        self.assertEqual(self.test_nums, self.nums)
+
 
 if __name__ == "__main__":
     unittest.main()
