@@ -114,6 +114,16 @@ class SortTest(unittest.TestCase):
         my_sort2.shell_sort(self.test_nums)
         self.assertEqual(self.test_nums, self.nums)
 
+    def test_my2_select_sort(self):
+        """选择排序"""
+        my_sort2.select_sort(self.test_nums)
+        self.assertEqual(self.test_nums, self.nums)
+
+    def test_my2_bubble_sort(self):
+        """冒泡排序"""
+        my_sort2.bubble_sort(self.test_nums)
+        self.assertEqual(self.test_nums, self.nums)
+
 
 if __name__ == "__main__":
     unittest.main()

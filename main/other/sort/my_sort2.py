@@ -107,3 +107,37 @@ def shell_sort(nums):
 ################################################################################
 #    选择排序
 ################################################################################
+
+
+def select_sort(nums):
+    """简单选择排序
+
+    :param nums: list
+        待排数组
+    """
+    for i in range(len(nums)):
+        min_index = i
+        for j in range(i + 1, len(nums)):
+            if nums[j] < nums[min_index]:
+                min_index = j
+
+        nums[min_index], nums[i] = nums[i], nums[min_index]
+
+# TODO 堆排序
+
+#################################################################################
+#   交换排序
+##################################################################################
+
+
+def bubble_sort(nums):
+    """冒泡排序
+
+    :param nums: list
+        待排数组
+    """
+    for i in range(len(nums)):
+        for j in range(len(nums) - 1, i, -1):
+            if nums[j] < nums[j - 1]:
+                nums[j], nums[j - 1] = nums[j - 1], nums[j]
+
