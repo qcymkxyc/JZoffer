@@ -81,5 +81,3 @@ def first_ring_node(head):
             return first_node
         first_node = first_node.next
         second_node = second_node.next
-
-    return
