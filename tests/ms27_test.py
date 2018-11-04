@@ -59,7 +59,7 @@ class MSTestCase(unittest.TestCase):
 
         # 根节点为空的情况
         root = None
-        my1.reverse_tree(root)
+        my2.reverse_tree(root)
         self.assertEqual([], q26.pre_order_tree(root))
         self.assertEqual([], q26.in_order_tree(root))
 
@@ -70,7 +70,7 @@ class MSTestCase(unittest.TestCase):
         reverse_pre_order_seq = [1, 2, 3, 4, 5]
         reverse_in_order_seq = [1, 2, 3, 4, 5]
         root = q26.create_binary_tree(pre_order_seq, in_order_seq)
-        my1.reverse_tree(root)
+        my2.reverse_tree(root)
         self.assertEqual(reverse_pre_order_seq, q26.pre_order_tree(root))
         self.assertEqual(reverse_in_order_seq, q26.in_order_tree(root))
 
@@ -81,7 +81,7 @@ class MSTestCase(unittest.TestCase):
         reverse_pre_order_seq = [1, 2, 3, 4, 5]
         reverse_in_order_seq = [5, 4, 3, 2, 1]
         root = q26.create_binary_tree(pre_order_seq, in_order_seq)
-        my1.reverse_tree(root)
+        my2.reverse_tree(root)
         self.assertEqual(reverse_pre_order_seq, q26.pre_order_tree(root))
         self.assertEqual(reverse_in_order_seq, q26.in_order_tree(root))
 

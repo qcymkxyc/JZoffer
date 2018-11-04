@@ -7,7 +7,7 @@
 @Email   : qcymkxyc@163.com
 @File    : my1.py
 @Software: PyCharm
-    
+
 """
 
 

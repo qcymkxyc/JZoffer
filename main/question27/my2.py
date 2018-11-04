@@ -9,7 +9,7 @@
 @Software: PyCharm
 
 扩展:用非递归实现
-    
+
 """
 
 
@@ -23,7 +23,6 @@ def reverse_tree(root):
     :param root: BinaryTreeNode
         树的根节点
     """
-    #
     stack = list()
 
     current_node = root
@@ -35,4 +34,3 @@ def reverse_tree(root):
             current_node = current_node.left_child
         else:
             current_node = stack.pop(0).right_child
-
