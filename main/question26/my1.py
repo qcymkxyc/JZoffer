@@ -90,8 +90,8 @@ def create_binary_tree(pre_order, in_order):
     in_order_right = in_order[in_order.index(root_elem) + 1:]   # 中序遍历右子树
 
     # 前序遍历的左右子树
-    pre_order_left = [elem for elem in pre_order if elem in in_order_left]
-    pre_order_right = [elem for elem in pre_order if elem in in_order_right]
+    pre_order_left = [elem for elem in pre_order if elem in in_order_left][:len(in_order_left)]
+    pre_order_right = [elem for elem in pre_order if elem in in_order_right][:len(in_order_right)]
 
     #  建立子树
     root_node = BinaryTreeNode(val=root_elem)
