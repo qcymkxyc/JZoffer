@@ -1,6 +1,7 @@
 import unittest
-from main.question32 import book1
+from main.question32 import book1, my2
 from main.question26 import my1 as q26
+import numpy as np
 
 
 class MSTestCase(unittest.TestCase):
@@ -27,7 +28,27 @@ class MSTestCase(unittest.TestCase):
         self.assertEqual([1, 2, 3, 4, 5], book1.level_display(root))
 
         # 根结点为空
-        self.assertEqual([],book1.level_display(None))
+        self.assertEqual([], book1.level_display(None))
+
+    def test_my2_breadth_first_search(self):
+        """测试图的广度遍历(邻接矩阵)"""
+        adjacency_matrix = np.asarray([
+            [0, 0, 0, 1],
+            [1, 0, 1, 0],
+            [1, 1, 0, 0],
+            [0, 1, 0, 0]
+        ])
+        self.assertEqual([0, 3, 1, 2], my2.breadth_first_search(adjacency_matrix))
+
+        adjacency_matrix = np.asarray([
+            [0, 1, 0, 1, 0, 0],
+            [0, 0, 0, 0, 1, 0],
+            [0, 0, 0, 0, 1, 1],
+            [0, 1, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 1]
+        ])
+        self.assertEqual([0, 1, 3, 4], my2.breadth_first_search(adjacency_matrix))
 
 
 if __name__ == '__main__':
