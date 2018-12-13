@@ -9,7 +9,7 @@
 @Software: PyCharm
 
 排序第二次训练
-    
+
 """
 
 ##############################################################
@@ -102,11 +102,14 @@ def shell_sort(nums):
 
     for interval in range(len(nums) // 2, 0, -1):
         for start_index in range(interval):
-            _insert_sort(_nums=nums, start_index=start_index, interval=interval)
+            _insert_sort(
+                _nums=nums,
+                start_index=start_index,
+                interval=interval)
 
-################################################################################
+##########################################################################
 #    选择排序
-################################################################################
+##########################################################################
 
 
 def select_sort(nums):
@@ -125,9 +128,9 @@ def select_sort(nums):
 
 # TODO 堆排序
 
-#################################################################################
+##########################################################################
 #   交换排序
-##################################################################################
+##########################################################################
 
 
 def bubble_sort(nums):
@@ -141,3 +144,57 @@ def bubble_sort(nums):
             if nums[j] < nums[j - 1]:
                 nums[j], nums[j - 1] = nums[j - 1], nums[j]
 
+
+def quick_sort(nums, left, right):
+    """快速排序
+
+    :param nums: list
+        待排数组
+    """
+    def inner_sort(inner_nums, start=0, end=len(nums) - 1):
+        """快速排序的交换部分
+
+        :param inner_nums: list
+            待排数组
+        :param start: int
+            开始的index
+        :param end: int
+            结束的index
+        """
+        if start >= end:
+            return -1
+
+        inner_left, inner_right = start, end
+        base = inner_nums[start]
+        while inner_left < inner_right:
+            # right从右向左走
+            while True:
+                if inner_left >= inner_right:
+                    break
+                num = inner_nums[inner_right]
+                if num < base:
+                    inner_nums[inner_left] = num
+                    break
+                inner_right -= 1
+
+            # left从左向右走
+            while True:
+                if inner_left >= inner_right:
+                    break
+                num = inner_nums[inner_left]
+                if num > base:
+                    inner_nums[inner_right] = num
+                    break
+                inner_left += 1
+
+        inner_nums[inner_left] = base
+        return inner_left
+
+    position = inner_sort(nums, left, right)
+    # num = nums[position]
+    # 当数组中仅有一个数或者没有数时则不作任何行为
+    if position == -1:
+        return
+
+    quick_sort(nums, left, position)
+    quick_sort(nums, position + 1, right)
