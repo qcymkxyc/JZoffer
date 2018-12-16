@@ -1,5 +1,5 @@
 import unittest
-from main.question38 import my1
+from main.question38 import my1, my2
 
 
 class MSTestCase(unittest.TestCase):
@@ -15,6 +15,15 @@ class MSTestCase(unittest.TestCase):
         ]
         self.assertEqual(arrangement, my1.whole_arrangement(s))
         self.assertEqual([""], my1.whole_arrangement(""))
+
+    def test_my2_all_combination(self):
+        s = "abc"
+        combination = [
+            "a", "b", "c",
+            "ab", "bc", "ac",
+            "abc"
+        ]
+        self.assertEqual(set(combination), set(my2.all_combination(s)))
 
 
 if __name__ == '__main__':
