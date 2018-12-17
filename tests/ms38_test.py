@@ -1,5 +1,5 @@
 import unittest
-from main.question38 import my1, my2
+from main.question38 import my1, my2, book3
 
 
 class MSTestCase(unittest.TestCase):
@@ -24,6 +24,13 @@ class MSTestCase(unittest.TestCase):
             "abc"
         ]
         self.assertEqual(set(combination), set(my2.all_combination(s)))
+
+    def test_book3_is_sum_equal(self):
+        seq = list(range(8))
+        equal_arr = book3.sum_equal(seq)
+        self.assertTrue(len(equal_arr) > 0)
+        for arr in equal_arr:
+            print(arr)
 
 
 if __name__ == '__main__':
