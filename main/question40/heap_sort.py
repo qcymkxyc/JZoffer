@@ -57,7 +57,7 @@ def heap_sort(nums):
     """
     end = len(nums)
     while end >= 1:
-        init_heap(nums,end)
+        init_heap(nums, end)
         nums[0], nums[end - 1] = nums[end - 1], nums[0]
         end -= 1
 
