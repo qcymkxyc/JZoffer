@@ -1,9 +1,9 @@
 import unittest
 
-from main.面试题3 import my1
-from main.面试题3 import my2
-from main.面试题3 import book1
-from main.面试题3 import book2
+from main.question3 import my1
+from main.question3 import my2
+from main.question3 import book1
+from main.question3 import book2
 
 class MSTest(unittest.TestCase):
     def setUp(self):
