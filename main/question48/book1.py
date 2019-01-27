@@ -36,7 +36,7 @@ def longest_substr(s):
             if distance > longest_dict[i - 1]:
                 longest_dict[i] = longest_dict[i - 1] + 1
             else:
-                longest_dict[i] = longest_dict[i - 1]
+                longest_dict[i] = distance
         # 无重复
         else:
             longest_dict[i] = longest_dict[i - 1] + 1
