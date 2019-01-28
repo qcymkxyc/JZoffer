@@ -1,5 +1,5 @@
 import unittest
-from main1.question3 import my1, book1, my2
+from main1.question3 import my1, book1, my2, book2
 
 
 class MSTestCase(unittest.TestCase):
@@ -26,6 +26,17 @@ class MSTestCase(unittest.TestCase):
         nums = [2, 3, 1, 0, 2, 5, 3]
         num = my2.repeat_num(nums)
         self.assertIn(num, [2, 3])
+
+    def test_book2_repeat_num(self):
+        nums = [2, 3, 1, 0, 2, 5, 3]
+        num = book2.repeat_num(nums)
+        self.assertIn(num, [2, 3])
+
+        nums = [1,2,3,4,5]
+        with self.assertRaises(ValueError):
+            book2.repeat_num(nums)
+            book2.repeat_num([])
+            book2.repeat_num([1])
 
 
 if __name__ == '__main__':
