@@ -11,7 +11,7 @@ class MSTestCase(unittest.TestCase):
         self.assertEqual(0, my1.reverse_tuple([1]))
 
     def test_book1_reverse_tuple(self):
-        nums = [7,5,6,4]
+        nums = [7, 5, 6, 4]
         self.assertEqual(5, book1.reverse_tuple(nums)[1])
 
         self.assertEqual(0, book1.reverse_tuple([])[1])
