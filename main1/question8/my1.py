@@ -44,7 +44,7 @@ def create_binary_tree(pre_order, in_order):
 
     pre_left = list(
         filter(
-            lambda x: x in in_left_child,pre_order))
+            lambda x: x in in_left_child, pre_order))
     pre_right = list(filter(lambda x: x in in_right_child, pre_order))
 
     root = BinaryTreeNode(root_val)
@@ -72,7 +72,8 @@ def pre_display(root):
     if not root:
         return list()
 
-    return [root.val] + pre_display(root.left_child) + pre_display(root.right_child)
+    return [root.val] + \
+        pre_display(root.left_child) + pre_display(root.right_child)
 
 
 def in_display(root):
